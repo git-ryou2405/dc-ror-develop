@@ -1,14 +1,18 @@
+require:
+  - rubocop-rails
+
+# 2020/11/8現在、onkcopそのままのファイルを利用すると、LayoutやNaming、Styleのルール名変更によるエラーが出るので、独自で作ったファイルを継承して指定する
+inherit_from:
+  - "config/rubocop/rubocop.yml"
+
 inherit_gem:
   onkcop:
-    # - "config/rubocop.yml"
-    # uncomment if use rails cops
-    # - "config/rails.yml"
-    # uncomment if use rspec cops
-    # - "config/rspec.yml"
+    - "config/rails.yml"
+    - "config/rspec.yml"
 
 AllCops:
-  TargetRubyVersion: 2.7.1
-  TargetRailsVersion: 6.0.3.4
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.1
   Exclude:
     - "vendor/**/*" # rubocop config/default.yml
     - "db/schema*.rb"
