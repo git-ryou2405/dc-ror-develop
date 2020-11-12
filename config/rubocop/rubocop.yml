@@ -4,6 +4,13 @@ AllCops:
     - "node_modules/**/*" # rubocop config/default.yml
     - "vendor/**/*"       # rubocop config/default.yml
     - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "config/**/*"
+    - "bin/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "log/**/*"
+    - "Gemfile"
 
 #################### Layout ################################
 
@@ -14,17 +21,6 @@ AllCops:
 # を再現できそう。
 Layout/ClassStructure:
   Enabled: true
-
-# メソッドチェーンの改行は末尾に . を入れる
-# * REPL に貼り付けた際の暴発を防ぐため
-# * 途中にコメントをはさむことができて実用上圧倒的に便利
-Layout/DotPosition:
-  EnforcedStyle: trailing
-
-# 桁揃えが綺麗にならないことが多いので migration は除外
-Layout/ExtraSpacing:
-  Exclude:
-    - "db/migrate/*.rb"
 
 # special_inside_parentheses (default) と比べて
 # * 横に長くなりづらい
