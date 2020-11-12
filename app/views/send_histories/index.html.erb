@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Send Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From user</th>
+      <th>To user</th>
+      <th>Amount</th>
+      <th>Send type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @send_histories.each do |send_history| %>
+      <tr>
+        <td><%= send_history.from_user_id %></td>
+        <td><%= send_history.to_user_id %></td>
+        <td><%= send_history.amount %></td>
+        <td><%= send_history.send_type %></td>
+        <td><%= link_to 'Show', send_history %></td>
+        <td><%= link_to 'Edit', edit_send_history_path(send_history) %></td>
+        <td><%= link_to 'Destroy', send_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Send History', new_send_history_path %>

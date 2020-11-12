@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From user:</strong>
+  <%= @send_history.from_user_id %>
+</p>
+
+<p>
+  <strong>To user:</strong>
+  <%= @send_history.to_user_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @send_history.amount %>
+</p>
+
+<p>
+  <strong>Send type:</strong>
+  <%= @send_history.send_type %>
+</p>
+
+<%= link_to 'Edit', edit_send_history_path(@send_history) %> |
+<%= link_to 'Back', send_histories_path %>
