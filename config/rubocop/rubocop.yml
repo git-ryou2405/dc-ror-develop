@@ -5,7 +5,9 @@ AllCops:
     - "vendor/**/*"       # rubocop config/default.yml
     - "db/schema.rb"
     - "db/migrate/**/*"
+    - "app/channels/**/*"
     - "config/**/*"
+    - "config.ru"
     - "bin/**/*"
     - "public/**/*"
     - "tmp/**/*"
