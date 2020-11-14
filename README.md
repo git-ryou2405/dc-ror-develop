@@ -30,6 +30,13 @@ docker-compose up
 ```
 docker-compose ps
 ```
+
+### docker環境でbundle install 
+```
+docker-compose exec web bundle install # docker-composeを起動中の場合
+docker-compose run web bundle install # docker-composeを起動していない場合
+```
+`docker-compose run --rm web bundle install`で、bundle installしながらdocker-composeが起動し、install完了後コンテナが停止する 
 ### railsコマンドを実行する
 ##### docker-composeで起動しているコンテナに入る
 コンテナに入った後、railsコマンドが実行できる
