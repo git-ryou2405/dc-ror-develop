@@ -24,7 +24,7 @@ class SendHistoriesController < ApplicationController
     @send_history = SendHistory.new(send_history_params)
 
     if @send_history.save
-      redirect_to @send_history, notice: 'Send history was successfully created.'
+      redirect_to @send_history, notice: "Send history was successfully created."
     else
       render :new
     end
@@ -33,7 +33,7 @@ class SendHistoriesController < ApplicationController
   # PATCH/PUT /send_histories/1
   def update
     if @send_history.update(send_history_params)
-      redirect_to @send_history, notice: 'Send history was successfully updated.'
+      redirect_to @send_history, notice: "Send history was successfully updated."
     else
       render :edit
     end
@@ -41,11 +41,12 @@ class SendHistoriesController < ApplicationController
 
   # DELETE /send_histories/1
   def destroy
-    @send_history.destroy
-    redirect_to send_histories_url, notice: 'Send history was successfully destroyed.'
+    @send_history.destroy!
+    redirect_to send_histories_url, notice: "Send history was successfully destroyed."
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_send_history
       @send_history = SendHistory.find(params[:id])
