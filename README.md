@@ -127,16 +127,3 @@ Gemfile:44:25: C: Layout/SpaceAfterColon: Space missing after colon.
 ```
 この程度であれば rubocop -a で自動修正されます。
 
-## 違反のレベル
-W以上は要修正です。
-
-F Fatal
-E Error
-W Warning
-
-↑ 修正すべき
---- 壁 ---
-↓ 修正の余地あり
-
-C Convention
-R Refactor
