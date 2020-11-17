@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Journalss</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From user</th>
+      <th>To user</th>
+      <th>Amount</th>
+      <th>Send type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journal.each do |journal| %>
+      <tr>
+        <td><%= journal.from_user_id %></td>
+        <td><%= journal.to_user_id %></td>
+        <td><%= journal.amount %></td>
+        <td><%= journal.send_type %></td>
+        <td><%= link_to 'Show', journal %></td>
+        <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
+        <td><%= link_to 'Destroy', journal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journal', new_journal_path %>
