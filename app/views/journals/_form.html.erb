@@ -1,10 +1,10 @@
-<%= form_with(model: jounal, local: true) do |form| %>
-  <% if jounal.errors.any? %>
+<%= form_with(model: journal, local: true) do |form| %>
+  <% if journal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(jounal.errors.count, "error") %> prohibited this journal from being saved:</h2>
+      <h2><%= pluralize(journal.errors.count, "error") %> prohibited this journal from being saved:</h2>
 
       <ul>
-        <% jounal.errors.full_messages.each do |message| %>
+        <% journal.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
