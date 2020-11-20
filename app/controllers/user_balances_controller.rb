@@ -54,6 +54,6 @@ class UserBalancesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_balance_params
-      params.require(:user_balance).permit(:balance, :user_id, :last_calculated_jounal_id)
+      params.require(:user_balance).permit(:balance, :user_id, :last_calculated_journal_id)
     end
 end

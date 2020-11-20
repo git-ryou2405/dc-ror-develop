@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_235539) do
   create_table "user_balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "balance"
     t.integer "user_id"
-    t.integer "last_calculated_jounal_id"
+    t.integer "last_calculated_journal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
