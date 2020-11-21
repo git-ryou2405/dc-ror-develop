@@ -1,2 +1,0 @@
-class SendHistory < ApplicationRecord
-end
