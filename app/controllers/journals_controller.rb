@@ -1,5 +1,4 @@
 class JournalsController < ApplicationController
-
   # GET /journals
   def index
     @journals = Journal.all
