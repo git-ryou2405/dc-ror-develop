@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update]
 
   # GET /users
   def index
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/new
+  # GET /users/new （device gemを導入したら削除）
   def new
     @user = User.new
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  # POST /users
+  # POST /users （device gemを導入したら削除）
   def create
     @user = User.new(user_params)
 
@@ -37,12 +37,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  # DELETE /users/1
-  def destroy
-    @user.destroy!
-    redirect_to users_url, notice: "User was successfully destroyed."
   end
 
   private
