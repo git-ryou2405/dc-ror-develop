@@ -1,2 +1,0 @@
-class UserBalancesController < ApplicationController
-end

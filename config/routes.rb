@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :user_balances
   root 'users#index'
-
-  resources :users
-  resources :journals
+  
+  resources :users, except: :destroy
+  resources :user_balances, only: [:index, :new, :create]
 end
