@@ -95,6 +95,31 @@ docker-compose ps
 ```
 ※-aオプションをつけると終了したコンテナも表示される
 
+## Dockerコンテナが落ちる問題の対処法
+
+#### 発生状態
+`docker-compose up`を実行しdockerコンテナが正常に起動せず、logに以下の様に出力されます。
+```
+========================================
+  Your Yarn packages are out of date!
+  Please run `yarn install --check-files` to update.
+========================================
+```
+
+#### 原因と対処法
+
+以下の方法で、yarnを再インストールしてください。（更新される様です。）  
+※実行前にdockerコンテナを`docker-compose stop`で落としてください。
+```
+$ docker-compose run --rm web yarn install
+```
+
+※実行後に、もし正常に起動していないようでしたら  
+　dockerコンテナ削除後に、`docker-compose up`で再度起動してください。
+
+[この問題についての詳細はこちら]  
+https://qiita.com/yama_ryoji/items/1de1f2e9e206382c4aa5
+
 ## rubocop操作
 ### rubocopとは
 既定のフォーマットから違反している部分を指摘してくれるツール。 -a オプションで簡単な違反を自動修正する。
