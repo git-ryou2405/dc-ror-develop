@@ -1,5 +1,5 @@
 class Journal < ApplicationRecord
-  belongs_to :to_user, class_name: "User", foreign_key: "to_user_id", inverse_of: "receipt_historie"
+  belongs_to :to_user, class_name: "User", foreign_key: "to_user_id", inverse_of: "receipt_histories"
   belongs_to :from_user, class_name: "User", foreign_key: "from_user_id", inverse_of: "send_histories"
 
   enum send_type: {
