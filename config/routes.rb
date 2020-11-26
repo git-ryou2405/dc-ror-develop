@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   }
   root 'users#index'
   
-  resources :users, except: :destroy
+  resources :users, except: [:new, :create, :destroy]
   resources :journals, only: [:index, :new, :create]
 end

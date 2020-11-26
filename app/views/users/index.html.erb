@@ -20,9 +20,8 @@
         <td><%= user.account_name %></td>
         <td><%= user.email %></td>
         <td><%= user.is_admin %></td>
-        <td><%= user.password %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_registration_path(user) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,10 +29,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
-
-  <% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <% end %>
+<%= link_to '新規登録', new_user_registration_path %>

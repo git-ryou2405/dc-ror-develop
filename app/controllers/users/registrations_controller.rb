@@ -71,6 +71,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :account_name, :email, :is_admin, :password)
+      params.require(:user).permit(:name, :account_name, :email, :is_admin, :password, :password_confirmation)
     end
 end
