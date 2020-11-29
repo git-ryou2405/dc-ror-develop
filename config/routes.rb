@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions',
     :passwords => 'users/passwords'
   }
-  resources :users, except: [:new, :create, :destroy]
+  resources :users, only: [:index, :show, :edit, :update]
   resources :journals, only: [:index, :new, :create]
 end

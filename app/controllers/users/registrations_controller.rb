@@ -10,16 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    @user = User.new(sign_up_params)
-
-    if @user.save
-      sign_in(:user, @user)
-      redirect_to @user, notice: "ユーザーの作成に成功しました。"
-    else
-      render :new
-    end
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -81,6 +74,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # Only allow a trusted parameter "white list" through.
     def sign_up_params
-      params.require(:user).permit(:name, :account_name, :email, :is_admin, :password, :password_confirmation)
+      params.require(:user).permit(:name, :account_name, :email, :password, :password_confirmation)
     end
 end
