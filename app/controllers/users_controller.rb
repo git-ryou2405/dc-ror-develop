@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: :show
 
   # GET /users
   def index
@@ -10,28 +10,10 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/1/edit
-  def edit
-  end
-
-  # PATCH/PUT /users/1
-  def update
-    if @user.update(user_params)
-      redirect_to @user, notice: "ユーザーが正常に更新されました。"
-    else
-      render :edit
-    end
-  end
-
   private
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params.require(:user).permit(:name, :account_name, :email, :is_admin)
     end
 end
