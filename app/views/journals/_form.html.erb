@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :send_type %>
-    <%= form.number_field :send_type %>
+    <%= form.select(:send_type, {fee: 'fee', tipping: 'tipping', issuance: 'issuance', cashing: 'cashing'})%>
   </div>
 
   <div class="actions">
