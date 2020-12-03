@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_130551) do
+ActiveRecord::Schema.define(version: 2020_12_03_000534) do
 
   create_table "journals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "from_user_id"
@@ -24,11 +24,12 @@ ActiveRecord::Schema.define(version: 2020_11_27_130551) do
   end
 
   create_table "user_balances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "balance"
     t.integer "user_id"
     t.integer "last_calculated_journal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "send_total_amount"
+    t.integer "receipt_total_amount"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_130551) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "password"
+    t.index ["account_name"], name: "index_users_on_account_name", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
