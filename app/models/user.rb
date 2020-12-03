@@ -14,5 +14,5 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
   validates :email, presence: true, length: { maximum: 256 }, uniqueness: { case_sensitive: false }
-  validates :is_admin, inclusion: { in: [true, false]}
+  validates :is_admin, inclusion: { in: [true, false] }
 end
