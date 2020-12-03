@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     get '/users/cancel', to: 'users/registrations#cancel', as: :cancel_user_registration
     get '/users/sign_up', to: 'users/registrations#new', as: :new_user_registration
     get '/users/:id/edit', to: 'users/registrations#edit', as: :edit_user_registration
-    patch '/users/', to: 'users/registrations#update', as: :user_registration
-    post '/users', to: 'users/registrations#create'
+    post '/users', to: 'users/registrations#create', as: :user_registration
+    patch '/users/:id', to: 'users/registrations#update'
   end
   
   resources :users, only: [:index, :show, :edit, :update]
