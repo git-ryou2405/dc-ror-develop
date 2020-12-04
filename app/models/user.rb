@@ -17,7 +17,6 @@ class User < ApplicationRecord
   validates :is_admin, inclusion: { in: [true, false] }
   # 残高計算
   def balance
-    balance_info = self.user_balance
-    balance_info.receipt_total_amount - balance_info.send_total_amount
+    user_balance.receipt_total_amount - user_balance.send_total_amount
   end
 end
