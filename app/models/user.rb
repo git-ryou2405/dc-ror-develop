@@ -15,4 +15,9 @@ class User < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
   validates :email, presence: true, length: { maximum: 256 }, uniqueness: { case_sensitive: false }
   validates :is_admin, inclusion: { in: [true, false] }
+  # 残高計算
+  def balance
+    balance_info = self.user_balance
+    balance_info.receipt_total_amount - balance_info.send_total_amount
+  end
 end

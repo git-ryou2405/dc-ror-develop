@@ -18,5 +18,10 @@
   <%= @user.is_admin %>
 </p>
 
+<p>
+  <strong>receipt_total_amount:</strong>
+  <%= @user.balance %>
+</p>
+
 <%= link_to 'Edit', edit_user_registration_path(@user) %> |
 <%= link_to 'Back', users_path %>
