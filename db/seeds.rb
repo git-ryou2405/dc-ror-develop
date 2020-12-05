@@ -25,6 +25,10 @@ amount_from_user2 = 100
   amount_from_user2 += 100
 end
 
+# User.create!(id: 2, name: "user2", account_name: "user_2", email: "user_2@test.com", is_admin: false, password: "222222")
+# Journal.create!(from_user_id: 1, to_user_id: 2, amount: 1000, send_type: "fee")
+# Journal.create!(from_user_id: 2, to_user_id: 1, amount: 100, send_type: "fee")
+
 # user1 user2 の残高状態
 UserBalance.create!(user_id: 1, last_calculated_journal_id: 3, send_total_amount: "3000", receipt_total_amount: "10000")
 UserBalance.create!(user_id: 2, last_calculated_journal_id: 6, send_total_amount: "300", receipt_total_amount: "10000")
