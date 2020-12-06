@@ -15,8 +15,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
   password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
-  # host: <%= ENV.fetch("MYSQL_HOST", "db") %>
-  host: <%= ENV.fetch("MYSQL_HOST", 'CLEARDB_DATABASE_URL') %>
+  host: <%= ENV.fetch("MYSQL_HOST", "db") %>
+  # host: <%= ENV.fetch("MYSQL_HOST", 'CLEARDB_DATABASE_URL') %>
   # host: <%= ENV['CLEARDB_DATABASE_URL'] %>
 
 development:
@@ -57,4 +57,5 @@ production:
   database: <%= ENV['DB_NAME'] %>
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
+  # url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
